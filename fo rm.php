@@ -1,6 +1,5 @@
 <?php 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if(isset($_POST['name'])) {
 
     echo "GET DATA:<br>";
     var_dump($_GET);
@@ -11,9 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<br><br>POST DATA:<br>";
     var_dump($_POST);
 
-    if (!empty($_POST['name'])) {
-        echo "<br>Name: " . $_POST['name'];
-    }
+    
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+
+    echo $name;
 }
 
 ?>
@@ -59,27 +60,21 @@ echo '
 
     <label>Name:</label><br>
     <input class="myclass" type="text" name="name" required><br><br>
-
     <label>Phone:</label><br>
     <input class="myclass" type="text" name="phone" required><br><br>
-
     <label>Email:</label><br>
     <input class="myclass" type="email" name="email" required><br><br>
-
     <label>Password:</label><br>
     <input class="myclass" type="password" name="password" required><br><br>
-
     <label>Gender:</label><br>
     <input type="radio" name="gender" value="male"> Male
     <input type="radio" name="gender" value="female"> Female
     <input type="radio" name="gender" value="other"> Other<br><br>
-
     <label>Hobbies:</label><br>
     <input type="checkbox" name="hobby[]" value="reading"> Reading
     <input type="checkbox" name="hobby[]" value="sports"> Sports
     <input type="checkbox" name="hobby[]" value="music"> Music
     <br><br>
-
     <label>Subject:</label><br>
     <select name="Subject">
         <option value="">--Select--</option>
@@ -89,7 +84,6 @@ echo '
         <option value="Linear">Linear Algebra</option>
         <option value="OOA">OOA</option>
     </select><br><br>
-
     <button class="mybtn" type="submit">Submit</button>
 
 </form>
