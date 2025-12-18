@@ -1,17 +1,21 @@
 
  <?php 
  
-if(isset($_POST['name'])) {
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+//     $gender = $_POST['gender'];
+//     $hobby = $_POST['hobby'];
+
+//     echo "gender: $gender <br>";
+//     echo "hobby: $hobby <br>";
+if(isset($_POST['gender'])){
     $gender=$_POST['gender'];
-    $hobbies=$_POST['hobby'];
-
-    echo $gender ;
-    echo $hobbies;
-    // die();
-
+    echo " $gender <br>";
 }
-
+if(isset($_POST['hobby'])){
+    $hobby=$_POST['hobby'];
+    echo $hobby;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +55,7 @@ if(isset($_POST['name'])) {
 <div class="mydiv">
 <h2>Simple Form</h2>
 
-<form action='<?php htmlspecialchars(string:$_SERVER['PHP_SELF'])?>' method="post">
+<form action='<?php htmlspecialchars($_SERVER['PHP_SELF'])?>' method="post">
 
 
     <label>Gender:</label><br>
