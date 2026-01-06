@@ -1,4 +1,7 @@
 <?php
+include('form2.php')
+require("form.php");
+echo "ahahahahahahah";
 // $data=$_GET;
 // echo "data";
 // echo "GET";

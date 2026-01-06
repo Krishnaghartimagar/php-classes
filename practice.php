@@ -3,8 +3,19 @@ if(isset($_POST['name'])){
     $name=$_POST['name'];
     $email=$_POST['email'];
 
+$conn = mysqli_connect("localhost", "Krishna", "Krishna@123", "Student");
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+echo "Database connected successfully";
+?>
+
     echo "your name is $name <br>";
     echo "your name is $email ";
+
+
 }
 ?>
 
